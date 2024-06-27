@@ -1,0 +1,56 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.gamefield {
+	margin: 0 auto;
+	position: relative;
+	width: 1000px;
+	height: 750px;
+	background-color: rgb(97, 201, 232);
+}
+
+.start {
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	width: 200px;
+	height: 100px;
+	background-color: red;
+}
+
+.waterlily {
+	position: absolute;
+	top: 50%;
+	left: 200px;
+	width: 100px;
+	height: 100px;
+	background-color: green;
+}
+
+.finished {
+	position: absolute;
+	top: 50%;
+	left: 800px;
+	width: 100px;
+	height: 100px;
+	background-color: rgb(165, 85, 4);
+}
+
+.waterlily:hover {
+	z-index: 10;
+	cursor: pointer;
+	/* translation to the right with an animation during 500ms*/
+	transform: translateX(600px);
+	animation: niv1 4s linear;
+}
+
+@keyframes niv1 {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(600px);
+	}
+}
