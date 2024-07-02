@@ -1,37 +1,59 @@
 // VARIABLES
 const cat = document.querySelector(".cat");
+const safe_cat = document.querySelector(".safe_cat");
 const turtle = document.querySelector(".turtle");
+const safe_turtle = document.querySelector(".safe_turtle");
 const snail = document.querySelector(".snail");
+const safe_snail = document.querySelector(".safe_snail");
+const start = document.querySelector(".start");
 const waterlily = document.querySelector(".waterlily");
+const finished = document.querySelector(".finished");
 const gamefield = document.querySelector(".gamefield");
 const safeplace = document.querySelector(".safeplace");
 
 snail.addEventListener("click", function () {
 	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/snail.svg') 25 25, auto`;
+	snail.style.display = "none";
 
-	// a hover on waterlily trigger the animation
-	waterlily.addEventListener("mouseenter", function () {
-		waterlily.style.transform = "translateX(650px)";
-		waterlily.style.animation = "niv_snail 4s linear";
-	});
+	// a leave off the start redisplay the snail
+	start.addEventListener("mouseleave", function () {
+		snail.style.display = "initial";
 
-	// a leave off waterlily stop the animation
-	waterlily.addEventListener("mouseleave", function () {
-		waterlily.style.transform = "translateX(0)";
-		waterlily.style.animation = "none";
-	});
+		// a hover on waterlily trigger the animation
+		waterlily.addEventListener("mouseenter", function () {
+			snail.style.display = "none";
+			waterlily.style.transform = "translateX(650px)";
+			waterlily.style.animation = "niv_snail 4s linear";
 
-	// a click on the safeplace moves the animal
-	safeplace.addEventListener("click", function () {
-		if (gamefield.style.cursor !== "default") {
-			snail.style.transform = "translateX(100px)";
-			gamefield.style.cursor = "default";
-		}
+			// a leave off waterlily stop the animation
+			waterlily.addEventListener("mouseleave", function () {
+				waterlily.style.transform = "translateX(0)";
+				waterlily.style.animation = "none";
+				if (safe_snail.style.display === "block") {
+					snail.style.display = "none";
+				} else {
+					snail.style.display = "initial";
+				}
+
+				// a hover on the finished hide the animal
+				finished.addEventListener("mouseenter", function () {
+					snail.style.display = "none";
+				});
+
+				// a click on the safeplace saves the animal
+				safeplace.addEventListener("click", function () {
+					if (gamefield.style.cursor !== "default") {
+						safe_snail.style.display = "block";
+						gamefield.style.cursor = "default";
+					}
+				});
+			});
+		});
 	});
 });
 
-// The cursor doesn't change if it is over the start, waterlilly or end div. But the cursor return to default when it is over none of the above mentionned div.
+// The cursor return to default when it is over the water
 gamefield.addEventListener("mouseover", function (event) {
 	if (
 		!event.target.classList.contains("start") &&
