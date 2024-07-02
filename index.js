@@ -18,7 +18,11 @@ snail.addEventListener("click", function () {
 
 	// a leave off the start redisplay the snail
 	start.addEventListener("mouseleave", function () {
-		snail.style.display = "initial";
+		if (safe_snail.style.display === "block") {
+			snail.style.display = "none";
+		} else {
+			snail.style.display = "initial";
+		}
 
 		// a hover on waterlily trigger the animation
 		waterlily.addEventListener("mouseenter", function () {
@@ -29,7 +33,7 @@ snail.addEventListener("click", function () {
 			// a leave off waterlily stop the animation
 			waterlily.addEventListener("mouseleave", function () {
 				waterlily.style.transform = "translateX(0)";
-				waterlily.style.animation = "none";
+				waterlily.style.animation = "waterlily_fail 0.5s linear";
 				if (safe_snail.style.display === "block") {
 					snail.style.display = "none";
 				} else {

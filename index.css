@@ -5,6 +5,18 @@
 
 /* KEYFRAMES */
 
+@keyframes waterlily_fail {
+	0% {
+		transform: scale(100%);
+	}
+	50% {
+		transform: scale(10%);
+	}
+	100% {
+		transform: scale(100%);
+	}
+}
+
 @keyframes niv_snail {
 	0% {
 		transform: translateX(0);
