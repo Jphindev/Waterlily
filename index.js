@@ -1,10 +1,18 @@
 // VARIABLES
-const cat = document.querySelector(".cat");
-const safe_cat = document.querySelector(".safe_cat");
 const turtle = document.querySelector(".turtle");
 const safe_turtle = document.querySelector(".safe_turtle");
 const snail = document.querySelector(".snail");
 const safe_snail = document.querySelector(".safe_snail");
+const frog = document.querySelector(".frog");
+const safe_frog = document.querySelector(".safe_frog");
+const cat = document.querySelector(".cat");
+const safe_cat = document.querySelector(".safe_cat");
+const dog = document.querySelector(".dog");
+const safe_dog = document.querySelector(".safe_dog");
+const pinguin = document.querySelector(".pinguin");
+const safe_pinguin = document.querySelector(".safe_pinguin");
+const cow = document.querySelector(".cow");
+const safe_cow = document.querySelector(".safe_cow");
 const start = document.querySelector(".start");
 const waterlily = document.querySelector(".waterlily");
 const finished = document.querySelector(".finished");
@@ -13,12 +21,16 @@ const safeplace = document.querySelector(".safeplace");
 
 // GAME WITH SNAIL
 
+if (safe_snail.style.display === "block") {
+	snail.style.display = "none";
+}
+
 snail.addEventListener("click", function () {
 	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/snail.svg') 25 25, auto`;
 	snail.style.display = "none";
 
-	// a leave off the start redisplay the snail
+	// a leave off the start redisplay the animal
 	start.addEventListener("mouseleave", function () {
 		if (safe_snail.style.display === "block") {
 			snail.style.display = "none";
@@ -44,14 +56,10 @@ snail.addEventListener("click", function () {
 					snail.style.display = "initial";
 				}
 
-				// a hover on the finished hide the animal
+				// a hover on the finished saves the animal
 				finished.addEventListener("mouseenter", function () {
-					snail.style.display = "none";
-				});
-
-				// a click on the safeplace saves the animal
-				safeplace.addEventListener("click", function () {
 					if (gamefield.style.cursor !== "default") {
+						snail.style.display = "none";
 						safe_snail.style.display = "block";
 						gamefield.style.cursor = "default";
 					}
@@ -68,7 +76,7 @@ turtle.addEventListener("click", function () {
 	gamefield.style.cursor = `url('icons/turtle.svg') 25 25, auto`;
 	turtle.style.display = "none";
 
-	// a leave off the start redisplay the turtle
+	// a leave off the start redisplay the animal
 	start.addEventListener("mouseleave", function () {
 		if (safe_turtle.style.display === "block") {
 			turtle.style.display = "none";
@@ -94,14 +102,10 @@ turtle.addEventListener("click", function () {
 					turtle.style.display = "initial";
 				}
 
-				// a hover on the finished hide the animal
+				// a hover on the finished saves the animal
 				finished.addEventListener("mouseenter", function () {
-					turtle.style.display = "none";
-				});
-
-				// a click on the safeplace saves the animal
-				safeplace.addEventListener("click", function () {
 					if (gamefield.style.cursor !== "default") {
+						turtle.style.display = "none";
 						safe_turtle.style.display = "block";
 						gamefield.style.cursor = "default";
 					}
@@ -120,7 +124,11 @@ gamefield.addEventListener("mouseover", function (event) {
 		!event.target.classList.contains("safeplace") &&
 		!event.target.classList.contains("cat") &&
 		!event.target.classList.contains("turtle") &&
-		!event.target.classList.contains("snail")
+		!event.target.classList.contains("snail") &&
+		!event.target.classList.contains("frog") &&
+		!event.target.classList.contains("dog") &&
+		!event.target.classList.contains("pinguin") &&
+		!event.target.classList.contains("cow")
 	) {
 		gamefield.style.cursor = "default";
 	}
