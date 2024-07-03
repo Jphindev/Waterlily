@@ -44,6 +44,84 @@
 	}
 }
 
+@keyframes niv_frog {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: scale(70%) translate(100px, -200px);
+	}
+	50% {
+		transform: translate(200px, 0px);
+	}
+	75% {
+		transform: scale(70%) translate(400px, 100px);
+	}
+	100% {
+		transform: translate(650px, 0px);
+	}
+}
+
+@keyframes niv_cat {
+	0% {
+		transform: translate(0, 0);
+	}
+	8% {
+		transform: translate(50px, -150px);
+	}
+	16% {
+		transform: translate(150px, -250px);
+	}
+	24% {
+		transform: translate(250px, -250px);
+	}
+	32% {
+		transform: translate(400px, -200px);
+	}
+	40% {
+		transform: translate(500px, -100px);
+	}
+	48% {
+		transform: translate(500px, 50px);
+	}
+	56% {
+		transform: translate(350px, 100px);
+	}
+	64% {
+		transform: translate(250px, 50px);
+	}
+	72% {
+		transform: translate(250px, -50px);
+	}
+	80% {
+		transform: translate(400px, -100px);
+	}
+	90% {
+		transform: translate(550px, -50px);
+	}
+	100% {
+		transform: rotate(0deg) translate(650px, 0px);
+	}
+}
+
+@keyframes niv_dog {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: rotate(0deg) translate(100px, -100px);
+	}
+	50% {
+		transform: rotate(70deg) translate(100px, -100px);
+	}
+	75% {
+		transform: rotate(-70deg) translate(400px, 100px);
+	}
+	100% {
+		transform: translate(650px, 0px);
+	}
+}
+
 /* INTERACTIONS */
 
 .waterlily:hover {
