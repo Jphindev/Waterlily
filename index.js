@@ -11,6 +11,8 @@ const finished = document.querySelector(".finished");
 const gamefield = document.querySelector(".gamefield");
 const safeplace = document.querySelector(".safeplace");
 
+// GAME WITH SNAIL
+
 snail.addEventListener("click", function () {
 	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/snail.svg') 25 25, auto`;
@@ -26,9 +28,11 @@ snail.addEventListener("click", function () {
 
 		// a hover on waterlily trigger the animation
 		waterlily.addEventListener("mouseenter", function () {
-			snail.style.display = "none";
-			waterlily.style.transform = "translateX(650px)";
-			waterlily.style.animation = "niv_snail 4s linear";
+			if (gamefield.style.cursor !== "default") {
+				snail.style.display = "none";
+				waterlily.style.transform = "translateX(650px)";
+				waterlily.style.animation = "niv_snail 5s linear";
+			}
 
 			// a leave off waterlily stop the animation
 			waterlily.addEventListener("mouseleave", function () {
@@ -49,6 +53,56 @@ snail.addEventListener("click", function () {
 				safeplace.addEventListener("click", function () {
 					if (gamefield.style.cursor !== "default") {
 						safe_snail.style.display = "block";
+						gamefield.style.cursor = "default";
+					}
+				});
+			});
+		});
+	});
+});
+
+// GAME WITH TURTLE
+
+turtle.addEventListener("click", function () {
+	// the cursor takes the shape of the animal
+	gamefield.style.cursor = `url('icons/turtle.svg') 25 25, auto`;
+	turtle.style.display = "none";
+
+	// a leave off the start redisplay the turtle
+	start.addEventListener("mouseleave", function () {
+		if (safe_turtle.style.display === "block") {
+			turtle.style.display = "none";
+		} else {
+			turtle.style.display = "initial";
+		}
+
+		// a hover on waterlily trigger the animation
+		waterlily.addEventListener("mouseenter", function () {
+			if (gamefield.style.cursor !== "default") {
+				turtle.style.display = "none";
+				waterlily.style.transform = "translateX(650px)";
+				waterlily.style.animation = "niv_turtle 10s linear";
+			}
+
+			// a leave off waterlily stop the animation
+			waterlily.addEventListener("mouseleave", function () {
+				waterlily.style.transform = "translateX(0)";
+				waterlily.style.animation = "waterlily_fail 0.5s linear";
+				if (safe_turtle.style.display === "block") {
+					turtle.style.display = "none";
+				} else {
+					turtle.style.display = "initial";
+				}
+
+				// a hover on the finished hide the animal
+				finished.addEventListener("mouseenter", function () {
+					turtle.style.display = "none";
+				});
+
+				// a click on the safeplace saves the animal
+				safeplace.addEventListener("click", function () {
+					if (gamefield.style.cursor !== "default") {
+						safe_turtle.style.display = "block";
 						gamefield.style.cursor = "default";
 					}
 				});
