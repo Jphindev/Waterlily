@@ -58,7 +58,7 @@
 		transform: scale(70%) translate(400px, 100px);
 	}
 	100% {
-		transform: translate(650px, 0px);
+		transform: translate(670px, 0px);
 	}
 }
 
@@ -100,7 +100,7 @@
 		transform: translate(550px, -50px);
 	}
 	100% {
-		transform: rotate(0deg) translate(650px, 0px);
+		transform: rotate(0deg) translate(670px, 0px);
 	}
 }
 
@@ -118,7 +118,7 @@
 		transform: rotate(-70deg) translate(400px, 100px);
 	}
 	100% {
-		transform: translate(650px, 0px);
+		transform: translate(670px, 0px);
 	}
 }
 
@@ -126,8 +126,6 @@
 
 .waterlily:hover {
 	z-index: 10;
-	/* transform: translateX(650px); */
-	/* animation: niv_snail 4s linear; */
 }
 
 /* DIV */
@@ -137,7 +135,18 @@
 	position: relative;
 	width: 1000px;
 	height: 750px;
-	background-color: rgb(97, 201, 232);
+	/* background-color: rgb(97, 201, 232); */
+	background-image: url(/textures/water3.jpg);
+	background-size: 1000px;
+}
+
+.fire {
+	position: absolute;
+	left: 0px;
+	width: 50px;
+	height: 600px;
+	background-image: url(/textures/fire.avif);
+	background-size: 50px;
 }
 
 .start {
@@ -145,16 +154,22 @@
 	left: 50px;
 	width: 100px;
 	height: 600px;
-	background-color: rgb(184, 115, 10);
+	/* background-color: rgb(184, 115, 10); */
+	background-image: url(/textures/wooden-bridge.webp);
+	background-size: 100px;
 }
 
 .waterlily {
 	position: absolute;
 	top: 50%;
-	left: 150px;
+	left: 130px;
 	width: 100px;
 	height: 100px;
-	background-color: green;
+	background-color: greenyellow;
+	background-image: url(/textures/lilypad.png);
+	background-position: center;
+	background-size: 110%;
+	border-radius: 40px;
 }
 
 .finished {
@@ -167,7 +182,7 @@
 	background-color: rgb(165, 85, 4);
 }
 
-.safeplace {
+/* .safeplace {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -183,7 +198,7 @@
 	height: 175px;
 	border: 5px solid;
 	border-color: rgb(14, 85, 4);
-}
+} */
 
 /* ANIMALS */
 
@@ -237,7 +252,6 @@
 }
 
 .safe_snail {
-	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 50px;
@@ -245,7 +259,6 @@
 }
 
 .safe_turtle {
-	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 50px;
@@ -253,7 +266,6 @@
 }
 
 .safe_frog {
-	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 50px;
@@ -261,7 +273,6 @@
 }
 
 .safe_cat {
-	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 50px;
@@ -269,7 +280,6 @@
 }
 
 .safe_dog {
-	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 0px;
@@ -277,7 +287,6 @@
 }
 
 .safe_pinguin {
-	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 0px;
@@ -285,7 +294,6 @@
 }
 
 .safe_cow {
-	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 0px;
