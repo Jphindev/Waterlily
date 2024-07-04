@@ -29,35 +29,35 @@ let startgame = function (animal, safe_animal, animation_property) {
 		} else {
 			animal.style.display = "initial";
 		}
+	});
 
-		// a hover on waterlily trigger the animation
-		waterlily.addEventListener("mouseenter", function () {
-			if (gamefield.style.cursor !== "default") {
-				animal.style.display = "none";
-				waterlily.style.transform = "translateX(670px)";
-				waterlily.style.animation = animation_property;
-			}
+	// a hover on waterlily trigger the animation
+	waterlily.addEventListener("mouseenter", function () {
+		if (gamefield.style.cursor !== "default") {
+			animal.style.display = "none";
+			waterlily.style.transform = "translateX(670px)";
+			waterlily.style.animation = animation_property;
+		}
+	});
 
-			// a leave off waterlily stop the animation
-			waterlily.addEventListener("mouseleave", function () {
-				waterlily.style.transform = "translateX(0)";
-				waterlily.style.animation = "waterlily_fail 0.5s linear";
-				if (safe_animal.style.display === "block") {
-					animal.style.display = "none";
-				} else {
-					animal.style.display = "initial";
-				}
+	// a leave off waterlily stop the animation
+	waterlily.addEventListener("mouseleave", function () {
+		waterlily.style.transform = "translateX(0)";
+		waterlily.style.animation = "waterlily_fail 0.5s linear";
+		if (safe_animal.style.display === "block") {
+			animal.style.display = "none";
+		} else {
+			animal.style.display = "initial";
+		}
+	});
 
-				// a hover on the finished saves the animal
-				finished.addEventListener("mouseenter", function () {
-					if (gamefield.style.cursor !== "default") {
-						animal.style.display = "none";
-						safe_animal.style.display = "block";
-						gamefield.style.cursor = "default";
-					}
-				});
-			});
-		});
+	// a hover on the finished saves the animal
+	finished.addEventListener("mouseenter", function () {
+		if (gamefield.style.cursor !== "default") {
+			animal.style.display = "none";
+			safe_animal.style.display = "block";
+			gamefield.style.cursor = "default";
+		}
 	});
 };
 
