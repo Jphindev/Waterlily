@@ -252,6 +252,7 @@
 }
 
 .safe_snail {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 50px;
@@ -259,6 +260,7 @@
 }
 
 .safe_turtle {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 50px;
@@ -266,6 +268,7 @@
 }
 
 .safe_frog {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 50px;
@@ -273,6 +276,7 @@
 }
 
 .safe_cat {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 50px;
@@ -280,6 +284,7 @@
 }
 
 .safe_dog {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 0px;
@@ -287,6 +292,7 @@
 }
 
 .safe_pinguin {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 0px;
@@ -294,6 +300,7 @@
 }
 
 .safe_cow {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	bottom: 0px;
