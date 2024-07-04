@@ -34,7 +34,7 @@ let startgame = function (animal, safe_animal, animation_property) {
 		waterlily.addEventListener("mouseenter", function () {
 			if (gamefield.style.cursor !== "default") {
 				animal.style.display = "none";
-				waterlily.style.transform = "translateX(650px)";
+				waterlily.style.transform = "translateX(670px)";
 				waterlily.style.animation = animation_property;
 			}
 
