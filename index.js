@@ -18,19 +18,20 @@ const waterlily = document.querySelector(".waterlily");
 const finished = document.querySelector(".finished");
 const gamefield = document.querySelector(".gamefield");
 const safeplace = document.querySelector(".safeplace");
+const animals = [snail, turtle, frog, cat, dog, pinguin, cow];
+const safe_animals = [
+	safe_snail,
+	safe_turtle,
+	safe_frog,
+	safe_cat,
+	safe_dog,
+	safe_pinguin,
+	safe_cow,
+];
 
 // ANIMAL FUNCTION
 
 let startgame = function (animal, safe_animal, animation_property) {
-	// a leave off the start redisplay the animal
-	start.addEventListener("mouseleave", function () {
-		if (safe_animal.style.display === "block") {
-			animal.style.display = "none";
-		} else {
-			animal.style.display = "initial";
-		}
-	});
-
 	// a hover on waterlily trigger the animation
 	waterlily.addEventListener("mouseenter", function () {
 		if (gamefield.style.cursor !== "default") {
@@ -44,11 +45,6 @@ let startgame = function (animal, safe_animal, animation_property) {
 	waterlily.addEventListener("mouseleave", function () {
 		waterlily.style.transform = "translateX(0)";
 		waterlily.style.animation = "waterlily_fail 0.5s linear";
-		if (safe_animal.style.display === "block") {
-			animal.style.display = "none";
-		} else {
-			animal.style.display = "initial";
-		}
 	});
 
 	// a hover on the finished saves the animal
@@ -56,7 +52,7 @@ let startgame = function (animal, safe_animal, animation_property) {
 		if (gamefield.style.cursor !== "default") {
 			animal.style.display = "none";
 			safe_animal.style.display = "block";
-			gamefield.style.cursor = "default";
+			return;
 		}
 	});
 };
@@ -65,14 +61,14 @@ snail.addEventListener("click", function () {
 	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/snail.svg') 25 25, auto`;
 	snail.style.display = "none";
-	startgame(snail, safe_snail, "niv_snail 5s linear");
+	startgame(snail, safe_snail, "niv_snail 3.5s linear");
 });
 
 turtle.addEventListener("click", function () {
 	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/turtle.svg') 25 25, auto`;
 	turtle.style.display = "none";
-	startgame(turtle, safe_turtle, "niv_turtle 10s linear");
+	startgame(turtle, safe_turtle, "niv_turtle 7s linear");
 });
 
 frog.addEventListener("click", function () {
@@ -112,5 +108,12 @@ gamefield.addEventListener("mouseover", function (event) {
 		!event.target.classList.contains("cow")
 	) {
 		gamefield.style.cursor = "default";
+		for (let i = 0; i < animals.length; i++) {
+			if (safe_animals[i].style.display === "block") {
+				animals[i].style.display = "none";
+			} else {
+				animals[i].style.display = "initial";
+			}
+		}
 	}
 });
