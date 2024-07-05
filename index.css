@@ -136,7 +136,7 @@
 	width: 1000px;
 	height: 750px;
 	/* background-color: rgb(97, 201, 232); */
-	background-image: url(/textures/water3.jpg);
+	background-image: url(textures/water3.jpg);
 	background-size: 1000px;
 }
 
@@ -145,7 +145,7 @@
 	left: 0px;
 	width: 50px;
 	height: 600px;
-	background-image: url(/textures/fire.avif);
+	background-image: url(textures/fire.avif);
 	background-size: 50px;
 }
 
@@ -155,7 +155,7 @@
 	width: 100px;
 	height: 600px;
 	/* background-color: rgb(184, 115, 10); */
-	background-image: url(/textures/wooden-bridge.webp);
+	background-image: url(textures/wooden-bridge.webp);
 	background-size: 100px;
 }
 
@@ -166,7 +166,7 @@
 	width: 100px;
 	height: 100px;
 	background-color: greenyellow;
-	background-image: url(/textures/lilypad.png);
+	background-image: url(textures/lilypad.png);
 	background-position: center;
 	background-size: 110%;
 	border-radius: 40px;
@@ -180,7 +180,7 @@
 	right: 0;
 	width: 200px;
 	height: 300px;
-	background-image: url(/textures/grass.jpg);
+	background-image: url(textures/grass.jpg);
 }
 
 .safeplace {
