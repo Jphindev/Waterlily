@@ -89,7 +89,14 @@ dog.addEventListener("click", function () {
 	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/dog.svg') 25 25, auto`;
 	dog.style.display = "none";
-	startgame(dog, safe_dog, "niv_dog 10s linear");
+	startgame(dog, safe_dog, "niv_dog 12s linear");
+});
+
+pinguin.addEventListener("click", function () {
+	// the cursor takes the shape of the animal
+	gamefield.style.cursor = `url('icons/pinguin.svg') 25 25, auto`;
+	pinguin.style.display = "none";
+	startgame(pinguin, safe_pinguin, "niv_pinguin 15s linear");
 });
 
 // The cursor return to default when it is over the water
