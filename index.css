@@ -164,6 +164,15 @@
 	}
 }
 
+@keyframes niv_cow {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(670px, 0px);
+	}
+}
+
 /* INTERACTIONS */
 
 .waterlily:hover {

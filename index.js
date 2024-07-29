@@ -33,67 +33,72 @@ const safe_animals = [
 
 let startgame = function (animal, safe_animal, animation_property) {
 	// a hover on waterlily trigger the animation
-	waterlily.addEventListener("mouseenter", function () {
-		if (gamefield.style.cursor !== "default") {
-			animal.style.display = "none";
-			waterlily.style.transform = "translateX(670px)";
-			waterlily.style.animation = animation_property;
-		}
-	});
+	waterlily.addEventListener(
+		"mouseenter",
+		function () {
+			if (gamefield.style.cursor !== "default") {
+				animal.style.display = "none";
+				waterlily.style.transform = "translateX(670px)";
+				waterlily.style.animation = animation_property;
 
-	// a leave off waterlily stop the animation
-	waterlily.addEventListener("mouseleave", function () {
-		waterlily.style.transform = "translateX(0)";
-		waterlily.style.animation = "waterlily_fail 0.5s linear";
-	});
+				// a leave off waterlily stop the animation
+				waterlily.addEventListener(
+					"mouseleave",
+					function () {
+						waterlily.style.transform = "translateX(0)";
+						waterlily.style.animation = "waterlily_fail 0.5s linear";
 
-	// a hover on the finished saves the animal
-	finished.addEventListener("mouseenter", function () {
-		if (gamefield.style.cursor !== "default") {
-			animal.style.display = "none";
-			safe_animal.style.display = "block";
-			return;
-		}
-	});
+						// a hover on the finished saves the animal
+						finished.addEventListener(
+							"mouseenter",
+							function () {
+								if (gamefield.style.cursor !== "default") {
+									animal.style.display = "none";
+									safe_animal.style.display = "block";
+								}
+							},
+							{ once: true }
+						);
+					},
+					{ once: true }
+				);
+			}
+		},
+		{ once: true }
+	);
 };
 
 snail.addEventListener("click", function () {
-	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/snail.svg') 25 25, auto`;
 	snail.style.display = "none";
 	startgame(snail, safe_snail, "niv_snail 3.5s linear");
 });
 
 turtle.addEventListener("click", function () {
-	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/turtle.svg') 25 25, auto`;
 	turtle.style.display = "none";
 	startgame(turtle, safe_turtle, "niv_turtle 7s linear");
 });
 
 frog.addEventListener("click", function () {
-	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/frog.svg') 25 25, auto`;
 	frog.style.display = "none";
 	startgame(frog, safe_frog, "niv_frog 10s linear");
 });
 
 cat.addEventListener("click", function () {
-	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/cat.svg') 25 25, auto`;
 	cat.style.display = "none";
 	startgame(cat, safe_cat, "niv_cat 10s linear");
 });
 
 dog.addEventListener("click", function () {
-	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/dog.svg') 25 25, auto`;
 	dog.style.display = "none";
 	startgame(dog, safe_dog, "niv_dog 12s linear");
 });
 
 pinguin.addEventListener("click", function () {
-	// the cursor takes the shape of the animal
 	gamefield.style.cursor = `url('icons/pinguin.svg') 25 25, auto`;
 	pinguin.style.display = "none";
 	startgame(pinguin, safe_pinguin, "niv_pinguin 15s linear");
