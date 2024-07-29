@@ -168,8 +168,35 @@
 	0% {
 		transform: translate(0, 0);
 	}
+	10% {
+		transform: rotate(0deg) translate(100px, -300px) scale(90%);
+	}
+	30% {
+		transform: rotate(120deg) translate(100px, -300px) scale(90%);
+	}
+	35% {
+		transform: translate(400px, 200px) scale(60%);
+	}
+	40% {
+		transform: rotate(0deg) translate(300px, 200px) scale(80%);
+	}
+	52% {
+		transform: rotate(-40deg) translate(300px, 200px) scale(70%);
+	}
+	53% {
+		transform: rotate(-40deg) translate(300px, 200px) scale(70%);
+	}
+	60% {
+		transform: translate(500px, -100px) scale(70%);
+	}
+	75% {
+		transform: rotate(-30deg) translate(500px, -100px) scale(60%);
+	}
+	88% {
+		transform: translate(450px, -50px) scale(50%);
+	}
 	100% {
-		transform: translate(670px, 0px);
+		transform: translate(670px, 0px) scale(90%);
 	}
 }
 

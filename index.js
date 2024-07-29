@@ -104,6 +104,12 @@ pinguin.addEventListener("click", function () {
 	startgame(pinguin, safe_pinguin, "niv_pinguin 15s linear");
 });
 
+cow.addEventListener("click", function () {
+	gamefield.style.cursor = `url('icons/cow.svg') 25 25, auto`;
+	cow.style.display = "none";
+	startgame(cow, safe_cow, "niv_cow 25s linear");
+});
+
 // The cursor return to default when it is over the water
 gamefield.addEventListener("mouseover", function (event) {
 	if (
