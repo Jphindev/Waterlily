@@ -1,23 +1,24 @@
 // VARIABLES
-const turtle = document.querySelector(".turtle");
-const safe_turtle = document.querySelector(".safe_turtle");
-const snail = document.querySelector(".snail");
-const safe_snail = document.querySelector(".safe_snail");
-const frog = document.querySelector(".frog");
-const safe_frog = document.querySelector(".safe_frog");
-const cat = document.querySelector(".cat");
-const safe_cat = document.querySelector(".safe_cat");
-const dog = document.querySelector(".dog");
-const safe_dog = document.querySelector(".safe_dog");
-const pinguin = document.querySelector(".pinguin");
-const safe_pinguin = document.querySelector(".safe_pinguin");
-const cow = document.querySelector(".cow");
-const safe_cow = document.querySelector(".safe_cow");
-const start = document.querySelector(".start");
-const waterlily = document.querySelector(".waterlily");
-const finished = document.querySelector(".finished");
-const gamefield = document.querySelector(".gamefield");
-const safeplace = document.querySelector(".safeplace");
+
+const turtle = document.getElementById("turtle");
+const safe_turtle = document.getElementById("safe_turtle");
+const snail = document.getElementById("snail");
+const safe_snail = document.getElementById("safe_snail");
+const frog = document.getElementById("frog");
+const safe_frog = document.getElementById("safe_frog");
+const cat = document.getElementById("cat");
+const safe_cat = document.getElementById("safe_cat");
+const dog = document.getElementById("dog");
+const safe_dog = document.getElementById("safe_dog");
+const pinguin = document.getElementById("pinguin");
+const safe_pinguin = document.getElementById("safe_pinguin");
+const cow = document.getElementById("cow");
+const safe_cow = document.getElementById("safe_cow");
+const start = document.getElementById("start");
+const waterlily = document.getElementById("waterlily");
+const finished = document.getElementById("finished");
+const gamefield = document.getElementById("gamefield");
+const safeplace = document.getElementById("safeplace");
 const animals = [snail, turtle, frog, cat, dog, pinguin, cow];
 const safe_animals = [
 	safe_snail,
@@ -28,6 +29,7 @@ const safe_animals = [
 	safe_pinguin,
 	safe_cow,
 ];
+const notwater = document.querySelectorAll(".notwater");
 
 // ANIMAL FUNCTION
 
@@ -55,6 +57,8 @@ let startgame = function (animal, safe_animal, animation_property) {
 								if (gamefield.style.cursor !== "default") {
 									animal.style.display = "none";
 									safe_animal.style.display = "block";
+									// l'élément qui suit animal dans le tableau animals s'affiche
+									animals[animals.indexOf(animal) + 1].style.display = "block";
 								}
 							},
 							{ once: true }
@@ -66,12 +70,26 @@ let startgame = function (animal, safe_animal, animation_property) {
 		},
 		{ once: true }
 	);
+	// The cursor return to default when it is over the water
+	gamefield.addEventListener("mouseover", function (event) {
+		if (!event.target.classList.contains("notwater")) {
+			gamefield.style.cursor = "default";
+			// window.location.reload();
+			for (let i = 0; i < animals.length; i++) {
+				if (safe_animal.style.display === "block") {
+					animal.style.display = "none";
+				} else {
+					animal.style.display = "block";
+				}
+			}
+		}
+	});
 };
 
 snail.addEventListener("click", function () {
 	gamefield.style.cursor = `url('icons/snail.svg') 25 25, auto`;
 	snail.style.display = "none";
-	startgame(snail, safe_snail, "niv_snail 3.5s linear");
+	startgame(snail, safe_snail, "niv_snail 3.5s ease-in");
 });
 
 turtle.addEventListener("click", function () {
@@ -108,30 +126,4 @@ cow.addEventListener("click", function () {
 	gamefield.style.cursor = `url('icons/cow.svg') 25 25, auto`;
 	cow.style.display = "none";
 	startgame(cow, safe_cow, "niv_cow 25s linear");
-});
-
-// The cursor return to default when it is over the water
-gamefield.addEventListener("mouseover", function (event) {
-	if (
-		!event.target.classList.contains("start") &&
-		!event.target.classList.contains("waterlily") &&
-		!event.target.classList.contains("finished") &&
-		!event.target.classList.contains("safeplace") &&
-		!event.target.classList.contains("cat") &&
-		!event.target.classList.contains("turtle") &&
-		!event.target.classList.contains("snail") &&
-		!event.target.classList.contains("frog") &&
-		!event.target.classList.contains("dog") &&
-		!event.target.classList.contains("pinguin") &&
-		!event.target.classList.contains("cow")
-	) {
-		gamefield.style.cursor = "default";
-		for (let i = 0; i < animals.length; i++) {
-			if (safe_animals[i].style.display === "block") {
-				animals[i].style.display = "none";
-			} else {
-				animals[i].style.display = "initial";
-			}
-		}
-	}
 });

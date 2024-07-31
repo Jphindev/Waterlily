@@ -202,13 +202,13 @@
 
 /* INTERACTIONS */
 
-.waterlily:hover {
+#waterlily:hover {
 	z-index: 10;
 }
 
 /* DIV */
 
-.gamefield {
+#gamefield {
 	margin: 0 auto;
 	position: relative;
 	width: 1000px;
@@ -218,16 +218,7 @@
 	background-size: 1000px;
 }
 
-.fire {
-	position: absolute;
-	left: 0px;
-	width: 50px;
-	height: 600px;
-	background-image: url(textures/fire.avif);
-	background-size: 50px;
-}
-
-.start {
+#start {
 	position: absolute;
 	left: 50px;
 	width: 100px;
@@ -237,7 +228,7 @@
 	background-size: 100px;
 }
 
-.waterlily {
+#waterlily {
 	position: absolute;
 	top: 50%;
 	left: 130px;
@@ -250,7 +241,7 @@
 	border-radius: 40px;
 }
 
-.finished {
+#finished {
 	position: absolute;
 	display: flex;
 	border-top-left-radius: 20px;
@@ -261,7 +252,7 @@
 	background-image: url(textures/grass.jpg);
 }
 
-.safeplace {
+#safeplace {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -281,56 +272,62 @@
 
 /* ANIMALS */
 
-.snail {
+#snail {
 	z-index: 20;
 	position: absolute;
 	top: 350px;
 	left: 0px;
 }
 
-.turtle {
+#turtle {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	top: 300px;
 	left: 50px;
 }
 
-.frog {
+#frog {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	top: 250px;
 	left: 0px;
 }
 
-.cat {
+#cat {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	top: 200px;
 	left: 50px;
 }
 
-.dog {
+#dog {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	top: 150px;
 	left: 0px;
 }
 
-.pinguin {
+#pinguin {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	top: 100px;
 	left: 50px;
 }
 
-.cow {
+#cow {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	top: 50px;
 	left: 0px;
 }
 
-.safe_snail {
+#safe_snail {
 	display: none;
 	z-index: 20;
 	position: absolute;
@@ -338,7 +335,7 @@
 	right: 150px;
 }
 
-.safe_turtle {
+#safe_turtle {
 	display: none;
 	z-index: 20;
 	position: absolute;
@@ -346,7 +343,7 @@
 	right: 100px;
 }
 
-.safe_frog {
+#safe_frog {
 	display: none;
 	z-index: 20;
 	position: absolute;
@@ -354,7 +351,7 @@
 	right: 50px;
 }
 
-.safe_cat {
+#safe_cat {
 	display: none;
 	z-index: 20;
 	position: absolute;
@@ -362,7 +359,7 @@
 	right: 0px;
 }
 
-.safe_dog {
+#safe_dog {
 	display: none;
 	z-index: 20;
 	position: absolute;
@@ -370,7 +367,7 @@
 	right: 150px;
 }
 
-.safe_pinguin {
+#safe_pinguin {
 	display: none;
 	z-index: 20;
 	position: absolute;
@@ -378,7 +375,7 @@
 	right: 100px;
 }
 
-.safe_cow {
+#safe_cow {
 	display: none;
 	z-index: 20;
 	position: absolute;
