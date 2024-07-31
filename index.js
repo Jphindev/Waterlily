@@ -19,6 +19,8 @@ const waterlily = document.getElementById("waterlily");
 const finished = document.getElementById("finished");
 const gamefield = document.getElementById("gamefield");
 const safeplace = document.getElementById("safeplace");
+const rules = document.getElementById("rules");
+const reset = document.getElementById("reset");
 const animals = [snail, turtle, frog, cat, dog, pinguin, cow];
 const safe_animals = [
 	safe_snail,
@@ -32,6 +34,11 @@ const safe_animals = [
 const notwater = document.querySelectorAll(".notwater");
 let saved_animals = [];
 
+reset.addEventListener("click", function () {
+	localStorage.clear();
+	location.reload();
+});
+
 if (localStorage.getItem("saved_animals")) {
 	saved_animals = JSON.parse(localStorage.getItem("saved_animals"));
 	animals[saved_animals.length].style.display = "block";
@@ -39,6 +46,7 @@ if (localStorage.getItem("saved_animals")) {
 		safe_animals[i].style.display = "block";
 	}
 } else {
+	rules.style.display = "block";
 	animals[0].style.display = "block";
 	localStorage.setItem("saved_animals", JSON.stringify(saved_animals));
 }
@@ -46,6 +54,7 @@ if (localStorage.getItem("saved_animals")) {
 // ANIMAL FUNCTION
 
 let startgame = function (animal, safe_animal, animation_property) {
+	rules.style.display = "none";
 	// a hover on waterlily trigger the animation
 	waterlily.addEventListener(
 		"mouseenter",

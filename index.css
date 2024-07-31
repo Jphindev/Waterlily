@@ -208,6 +208,26 @@
 
 /* DIV */
 
+#title {
+	text-align: center;
+}
+
+#reset {
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	left: 400px;
+	bottom: 30px;
+}
+
+#rules {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
 #gamefield {
 	margin: 0 auto;
 	position: relative;
