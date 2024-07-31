@@ -273,6 +273,7 @@
 /* ANIMALS */
 
 #snail {
+	display: none;
 	z-index: 20;
 	position: absolute;
 	top: 350px;

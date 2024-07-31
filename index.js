@@ -30,6 +30,18 @@ const safe_animals = [
 	safe_cow,
 ];
 const notwater = document.querySelectorAll(".notwater");
+let saved_animals = [];
+
+if (localStorage.getItem("saved_animals")) {
+	saved_animals = JSON.parse(localStorage.getItem("saved_animals"));
+	animals[saved_animals.length].style.display = "block";
+	for (let i = 0; i < saved_animals.length; i++) {
+		safe_animals[i].style.display = "block";
+	}
+} else {
+	animals[0].style.display = "block";
+	localStorage.setItem("saved_animals", JSON.stringify(saved_animals));
+}
 
 // ANIMAL FUNCTION
 
@@ -43,7 +55,7 @@ let startgame = function (animal, safe_animal, animation_property) {
 				waterlily.style.transform = "translateX(670px)";
 				waterlily.style.animation = animation_property;
 
-				// a leave off waterlily stop the animation
+				// a leave off the waterlily stop the animation
 				waterlily.addEventListener(
 					"mouseleave",
 					function () {
@@ -57,8 +69,14 @@ let startgame = function (animal, safe_animal, animation_property) {
 								if (gamefield.style.cursor !== "default") {
 									animal.style.display = "none";
 									safe_animal.style.display = "block";
+									saved_animals.push(safe_animal.id);
 									// l'élément qui suit animal dans le tableau animals s'affiche
-									animals[animals.indexOf(animal) + 1].style.display = "block";
+									animals[saved_animals.length].style.display = "block";
+									console.log(animal.id);
+									localStorage.setItem(
+										"saved_animals",
+										JSON.stringify(saved_animals)
+									);
 								}
 							},
 							{ once: true }
@@ -74,7 +92,7 @@ let startgame = function (animal, safe_animal, animation_property) {
 	gamefield.addEventListener("mouseover", function (event) {
 		if (!event.target.classList.contains("notwater")) {
 			gamefield.style.cursor = "default";
-			// window.location.reload();
+			window.location.reload();
 			for (let i = 0; i < animals.length; i++) {
 				if (safe_animal.style.display === "block") {
 					animal.style.display = "none";
