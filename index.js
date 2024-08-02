@@ -21,6 +21,7 @@ const gamefield = document.getElementById("gamefield");
 const safeplace = document.getElementById("safeplace");
 const rules = document.getElementById("rules");
 const reset = document.getElementById("reset");
+const congrats = document.getElementById("congrats");
 const animals = [snail, turtle, frog, cat, dog, pinguin, cow];
 const safe_animals = [
 	safe_snail,
@@ -44,6 +45,9 @@ if (localStorage.getItem("saved_animals")) {
 	animals[saved_animals.length].style.display = "block";
 	for (let i = 0; i < saved_animals.length; i++) {
 		safe_animals[i].style.display = "block";
+	}
+	if (saved_animals.length === 7) {
+		congrats.style.display = "block";
 	}
 } else {
 	rules.style.display = "block";
