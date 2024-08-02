@@ -210,6 +210,8 @@
 
 #title {
 	text-align: center;
+	position: relative;
+	top: 750px;
 }
 
 #reset {
@@ -217,7 +219,7 @@
 	margin: 0 auto;
 	position: relative;
 	left: 400px;
-	bottom: 30px;
+	top: 720px;
 }
 
 #rules {
@@ -226,19 +228,24 @@
 	top: 0;
 	left: 50%;
 	transform: translate(-50%, 0);
+	z-index: 1;
 }
 
 #gamefield {
+	z-index: 0;
 	margin: 0 auto;
-	position: relative;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translate(-50%, 0);
 	width: 1000px;
 	height: 750px;
-	/* background-color: rgb(97, 201, 232); */
 	background-image: url(textures/water3.jpg);
 	background-size: 1000px;
 }
 
 #start {
+	z-index: 3;
 	position: absolute;
 	left: 50px;
 	width: 100px;
@@ -249,6 +256,7 @@
 }
 
 #waterlily {
+	z-index: 5;
 	position: absolute;
 	top: 50%;
 	left: 130px;
@@ -294,7 +302,7 @@
 
 #snail {
 	display: none;
-	z-index: 20;
+	z-index: 999;
 	position: absolute;
 	top: 350px;
 	left: 0px;
@@ -402,4 +410,10 @@
 	position: absolute;
 	bottom: 0px;
 	right: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+	body {
+		transform: scale(75%);
+	}
 }
