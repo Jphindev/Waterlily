@@ -34,20 +34,26 @@ const safe_animals = [
 ];
 const notwater = document.querySelectorAll(".notwater");
 let saved_animals = [];
+let triescount = document.getElementById("triescount");
+triescount.innerText = 0;
 
 reset.addEventListener("click", function () {
 	localStorage.clear();
 	location.reload();
 });
 
+if (localStorage.getItem("triescount")) {
+	triescount.innerText = localStorage.getItem("triescount");
+}
+
 if (localStorage.getItem("saved_animals")) {
 	saved_animals = JSON.parse(localStorage.getItem("saved_animals"));
+	if (saved_animals.length === 7) {
+		congrats.style.display = "block";
+	}
 	animals[saved_animals.length].style.display = "block";
 	for (let i = 0; i < saved_animals.length; i++) {
 		safe_animals[i].style.display = "block";
-	}
-	if (saved_animals.length === 7) {
-		congrats.style.display = "block";
 	}
 } else {
 	rules.style.display = "block";
@@ -67,6 +73,8 @@ let startgame = function (animal, safe_animal, animation_property) {
 				animal.style.display = "none";
 				waterlily.style.transform = "translateX(670px)";
 				waterlily.style.animation = animation_property;
+				triescount.innerText = parseInt(triescount.innerText) + 1;
+				localStorage.setItem("triescount", triescount.innerText);
 
 				// a leave off the waterlily stop the animation
 				waterlily.addEventListener(
@@ -84,12 +92,16 @@ let startgame = function (animal, safe_animal, animation_property) {
 									safe_animal.style.display = "block";
 									saved_animals.push(safe_animal.id);
 									// l'élément qui suit animal dans le tableau animals s'affiche
-									animals[saved_animals.length].style.display = "block";
 									console.log(animal.id);
 									localStorage.setItem(
 										"saved_animals",
 										JSON.stringify(saved_animals)
 									);
+									if (saved_animals.length < 7) {
+										animals[saved_animals.length].style.display = "block";
+									} else {
+										congrats.style.display = "block";
+									}
 								}
 							},
 							{ once: true }

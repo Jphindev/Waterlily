@@ -129,34 +129,34 @@
 	0% {
 		transform: translate(0, 0);
 	}
+	9% {
+		transform: translate(100px, -100px) scale(90%);
+	}
 	10% {
 		transform: translate(100px, -100px) scale(90%);
 	}
-	11% {
-		transform: translate(100px, -100px) scale(90%);
-	}
-	25% {
+	20% {
 		transform: translate(200px, 100px) scale(90%);
 	}
-	26% {
+	21% {
 		transform: translate(200px, 100px) scale(90%);
 	}
-	45% {
+	41% {
 		transform: translate(300px, -200px) scale(80%);
 	}
-	46% {
+	42% {
 		transform: translate(300px, -200px) scale(80%);
 	}
-	70% {
+	65% {
 		transform: translate(400px, 200px) scale(70%);
 	}
-	71% {
+	66% {
 		transform: translate(400px, 200px) scale(70%);
 	}
-	90% {
+	85% {
 		transform: translate(500px, -300px) scale(60%);
 	}
-	91% {
+	86% {
 		transform: translate(500px, -300px) scale(60%);
 	}
 	100% {
@@ -171,13 +171,19 @@
 	10% {
 		transform: rotate(0deg) translate(100px, -300px) scale(90%);
 	}
+	29% {
+		transform: rotate(120deg) translate(100px, -300px) scale(90%);
+	}
 	30% {
 		transform: rotate(120deg) translate(100px, -300px) scale(90%);
 	}
 	35% {
 		transform: translate(400px, 200px) scale(60%);
 	}
-	40% {
+	36% {
+		transform: translate(400px, 200px) scale(60%);
+	}
+	41% {
 		transform: rotate(0deg) translate(300px, 200px) scale(80%);
 	}
 	52% {
@@ -189,10 +195,16 @@
 	60% {
 		transform: translate(500px, -100px) scale(70%);
 	}
+	74% {
+		transform: rotate(-30deg) translate(500px, -100px) scale(60%);
+	}
 	75% {
 		transform: rotate(-30deg) translate(500px, -100px) scale(60%);
 	}
 	88% {
+		transform: translate(450px, -50px) scale(50%);
+	}
+	89% {
 		transform: translate(450px, -50px) scale(50%);
 	}
 	100% {
@@ -222,6 +234,19 @@
 	top: 720px;
 }
 
+#gamefield {
+	z-index: 0;
+	margin: 0 auto;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 1000px;
+	height: 750px;
+	background-image: url(textures/water3.jpg);
+	background-size: 1000px;
+}
+
 #rules {
 	display: none;
 	position: absolute;
@@ -240,17 +265,10 @@
 	z-index: 50;
 }
 
-#gamefield {
-	z-index: 0;
-	margin: 0 auto;
+#tries {
 	position: absolute;
-	top: 0px;
-	left: 50%;
-	transform: translate(-50%, 0);
-	width: 1000px;
-	height: 750px;
-	background-image: url(textures/water3.jpg);
-	background-size: 1000px;
+	bottom: 10px;
+	left: 10px;
 }
 
 #start {
