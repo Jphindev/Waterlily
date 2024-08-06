@@ -162,11 +162,11 @@ dog.addEventListener("click", function () {
 pinguin.addEventListener("click", function () {
 	gamefield.style.cursor = `url('icons/pinguin.svg') 25 25, auto`;
 	pinguin.style.display = "none";
-	startgame(pinguin, safe_pinguin, "niv_pinguin 15s linear");
+	startgame(pinguin, safe_pinguin, "niv_pinguin 25s linear");
 });
 
 cow.addEventListener("click", function () {
 	gamefield.style.cursor = `url('icons/cow.svg') 25 25, auto`;
 	cow.style.display = "none";
-	startgame(cow, safe_cow, "niv_cow 25s linear");
+	startgame(cow, safe_cow, "niv_cow 15s linear");
 });
